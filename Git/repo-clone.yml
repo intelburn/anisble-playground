@@ -1,0 +1,27 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install Updates
+    apt:
+      update_cache: yes
+      upgrade: dist
+  - name: Install git
+    apt:
+      name:
+        - git
+      state: latest
+  - name: Create directory for git
+    file:
+      path: /opt/tools
+      state: directory
+      owner: n00b
+      group: n00b
+      recurse: yes
+      mode: 0775
+  - name: clone a repo
+    git:
+      repo: https://github.com/intelburn/anisble-playground.git
+      dest: /opt/tools
+      clone: yes
+      update: yes
