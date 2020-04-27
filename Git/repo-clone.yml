@@ -22,6 +22,6 @@
   - name: clone a repo
     git:
       repo: https://github.com/intelburn/anisble-playground.git
-      dest: /opt/tools
+      dest: /opt/tools/ansible-playground
       clone: yes
       update: yes
