@@ -25,3 +25,7 @@
       dest: /opt/tools/ansible-playground
       clone: yes
       update: yes
+  - name: run script from cloned repo
+    shell: test.sh
+    args:
+      chdir: /opt/tools/ansible-playground/Git
