@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: make file2
+    file:
+      path: /opt/tools/file2
+      state: touch
+      mode: 777

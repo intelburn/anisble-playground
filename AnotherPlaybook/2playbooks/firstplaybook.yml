@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: make file1
+    file:
+      path: /opt/tools/file1
+      state: touch
+      mode: 777
+- import_playbook: secondplaybook.yml
