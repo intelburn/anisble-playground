@@ -25,7 +25,9 @@
       dest: /opt/tools/ansible-playground
       clone: yes
       update: yes
+      force: yes
   - name: run script from cloned repo
-    shell: test.sh
+    # If you want to run a remote script you need to use the absolute path for the script
+    shell: /opt/tools/ansible-playground/Git/test.sh
     args:
-      chdir: /opt/tools/ansible-playground/Git
+      chdir: /opt/tools/ansible-playground/Git/
